@@ -14,12 +14,12 @@ echo "worker-comfyui: Starting ComfyUI"
 
 # Serve the API and don't shutdown the container
 if [ "$SERVE_API_LOCALLY" == "true" ]; then
-    python /comfyui/main.py
+    python /comfyui/main.py --listen
 
     # echo "worker-comfyui: Starting RunPod Handler"
     # python -u /handler.py --rp_serve_api --rp_api_host=0.0.0.0
 else
-    python /comfyui/main.py
+    python /comfyui/main.py --listen
 
     # echo "worker-comfyui: Starting RunPod Handler"
     # python -u /handler.py
